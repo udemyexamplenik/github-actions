@@ -6,10 +6,16 @@ jobs:
   run-github-actions :
     runs-on : ubuntu-latest
     steps:
-      - name : Check the execution folder
+      - name : List files
         run : |
           pwd 
           ls -al
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{ github.token }}"
+          # git clone git@github : udemyexamplenik/$GITHUB_REPOSITORY
+          # git checkout $GITHUB_SHA
       - name : simple JS Actions
         id : greet
         uses : actions/hello-world-javascript-action@v1
