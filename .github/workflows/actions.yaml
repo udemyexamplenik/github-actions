@@ -17,3 +17,9 @@ jobs:
           who-to-greet : John
       - name : Log Greeting Time
         run : echo "${{ steps.greet.outputs.time }}"
+      - name : Check
+        uses: actions/checkout@v1
+        run : 
+          pwd
+          ls -al
+        
