@@ -19,8 +19,10 @@ jobs:
         run : echo "${{ steps.greet.outputs.time }}"
       - name : Check the checkout funciton
         uses : action/checkout@v1
+      - name : Check the execution folder after checkout
         run : |
           pwd 
           ls -al
+        
       
         
