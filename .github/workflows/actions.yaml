@@ -8,7 +8,7 @@ jobs:
     steps:
       - name : Check the execution folder
         run : |
-          pwd
+          pwd 
           ls -al
       - name : simple JS Actions
         id : greet
@@ -17,9 +17,10 @@ jobs:
           who-to-greet : John
       - name : Log Greeting Time
         run : echo "${{ steps.greet.outputs.time }}"
-      - name : Check
-        uses: actions/checkout@v1
-        run : 
-          pwd
+      - name : Check the checkout funciton
+        uses : action/checkout@v1
+        run : |
+          pwd 
           ls -al
+      
         
