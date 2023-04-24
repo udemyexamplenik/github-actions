@@ -1,6 +1,13 @@
 name : Test shell commands
 
 on : 
+
+  push : 
+    branches:
+      - master
+      - 'feature/*'
+      - 'feature/**'
+
   # schedule:
   #   - cron: "5 * * * *"
 
@@ -10,6 +17,8 @@ on :
       - reopened
       - opened
       - assigned
+    branches:
+      - master
 
 
 jobs : 
