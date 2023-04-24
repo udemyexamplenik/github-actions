@@ -1,6 +1,16 @@
 name : Test shell commands
 
-on : [push]
+on : 
+  # schedule:
+  #   - cron: "5 * * * *"
+
+  pull_request:
+    types:
+      - closed
+      - reopened
+      - opened
+      - assigned
+
 
 jobs : 
   run-shell-command : 
