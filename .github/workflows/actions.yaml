@@ -18,7 +18,7 @@ jobs:
       - name : Log Greeting Time
         run : echo "${{ steps.greet.outputs.time }}"
       - name : Check the checkout funciton
-        uses : action/checkout@v1
+        uses : actions/checkout@v1
       - name : Check the execution folder after checkout
         run : |
           pwd 
