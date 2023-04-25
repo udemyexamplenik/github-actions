@@ -1,7 +1,7 @@
 name : Matrix
 
 on : 
-  - push
+  - pull_request
 
 jobs:
   node-version : 
@@ -9,6 +9,9 @@ jobs:
       matrix :
         os : [windows-latest, ubuntu-latest, macos-latest]
         node_version : [6, 8, 10]
+        exclude :
+          - os : ubuntu-latest
+            node_version : 6 # exclude ubuntu-latest when node_version is 6
       fail-fast: false
     runs-on : ${{ matrix.os }}
     steps :

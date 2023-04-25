@@ -2,11 +2,11 @@ name : Test shell commands
 
 on : 
 
-  push : 
-    branches:
-      - master
-      - 'feature/*'
-      - 'feature/**'
+  # push : 
+  #   branches:
+  #     - master
+  #     - 'feature/*'
+  #     - 'feature/**'
 
   # schedule:
   #   - cron: "5 * * * *"
