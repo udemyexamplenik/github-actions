@@ -5,13 +5,17 @@ on :
 
 jobs:
   node-version : 
-    runs-on : ubuntu-latest
+    strategy:
+      matrix :
+        os : [windows-latest, ubuntu-latest, macos-latest]
+        node_version : [6, 8, 10]
+      fail-fast: false
+    runs-on : ${{ matrix.os }}
     steps :
       - name : Log node verison
         run : node -v
       - uses : actions/setup-node@v1
         with :
-          node-version : 6
+          node-version : ${{ matrix.node_version }}
       - name : Log node verson after changing the default version
         run : node -v
-      
