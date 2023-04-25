@@ -23,6 +23,7 @@ jobs:
           echo "${{ github.token }}"
           # git clone git@github : udemyexamplenik/$GITHUB_REPOSITORY
           # git checkout $GITHUB_SHA
+        continue-on-error: true
       - name : simple JS Actions
         id : greet
         uses : actions/hello-world-javascript-action@v1
